@@ -27,6 +27,15 @@ namespace Task_2_3.Scripts
             Rotate();
         }
 
+        public void JumpMobile()
+        {
+            if (_characterController.isGrounded)
+            {
+                _moveDirection.y = jumpSpeed;
+                _characterController.Move(_moveDirection * Time.deltaTime);
+            }
+        }
+
         private void Move()
         {
             if (_characterController.isGrounded)
