@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Task_2_1/Task_2_1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Task_2_2/Task_2_2.unity
+    guid: 00653c54ccb9ff440afc4cee655273a1
   m_configObjects: {}
