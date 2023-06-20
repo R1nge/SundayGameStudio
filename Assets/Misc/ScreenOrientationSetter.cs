@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Task_1.Scripts
+namespace Misc
 {
     public class ScreenOrientationSetter : MonoBehaviour
     {

@@ -6658,6 +6658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c483bb21f9cd44f9acba95f43d55246d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 919894759}
   offset: {x: 0, y: -0.11, z: 0}
   playerModel: {fileID: 543450652230228523}
   system: {fileID: 150777485}
