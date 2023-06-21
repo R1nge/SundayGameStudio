@@ -54,15 +54,7 @@ namespace Task_2_2.Scripts
 
         public void BrakeMobile()
         {
-            if (GetCurrentSpeedKmh() >= 0.1f)
-            {
-                SetBrakeTorque(CalculateBrakeTorque());
-            }
-            else
-            {
-                SetBrakeTorque(0);
-            }
-
+            SetBrakeTorque(CalculateBrakeTorque());
             SetTorque(0);
         }
 
@@ -102,10 +94,7 @@ namespace Task_2_2.Scripts
 
         private void SetBrakeTorque(float value)
         {
-            if (value < 0)
-            {
-                value *= -1;
-            }
+            value = Mathf.Abs(value);
 
             for (int i = 0; i < rearWheelColliders.Length; i++)
             {

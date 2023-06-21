@@ -989,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73480a7010147a9b3c2e0977839a349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadThreshold: 150
+  loadThreshold: 25
   slotPrefab: {fileID: 1491572555098965312, guid: 61477b2909f29bc48a68c90c19e85996, type: 3}
   scrollRect: {fileID: 896978554}
   contentParent: {fileID: 2010678537}
