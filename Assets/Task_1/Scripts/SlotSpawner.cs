@@ -16,21 +16,21 @@ namespace Task_1.Scripts
         private void Awake()
         {
             _previousPosition = contentParent.position;
-            scrollRect.onValueChanged.AddListener(SpawnAndSetImages);
+            scrollRect.onValueChanged.AddListener(SpawnNextImages);
         }
 
-        private void Start() => SpawnAndSetImage(6);
+        private void Start() => SpawnSlotWithImage(6);
 
-        private void SpawnAndSetImages(Vector2 position)
+        private void SpawnNextImages(Vector2 position)
         {
             if (contentParent.position.y - _previousPosition.y > loadThreshold)
             {
-                SpawnAndSetImage(2);
+                SpawnSlotWithImage(2);
                 _previousPosition = contentParent.position;
             }
         }
 
-        private async void SpawnAndSetImage(int amount)
+        private async void SpawnSlotWithImage(int amount)
         {
             for (int i = 0; i < amount; i++)
             {
