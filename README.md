@@ -1,6 +1,6 @@
 # SundayGameStudio
 
-https://github.com/R1nge/SundayGameStudio/assets/59400159/ac23ec20-bbcf-4580-9c35-eed48bd16dc3
+https://github.com/R1nge/SundayGameStudio/assets/59400159/a57e6e19-5a03-4ee7-9e9d-c6953cea64fc
 
 Credits: 
 https://sketchfab.com/3d-models/gege-8ac7828988394a15b05b699948863fae
