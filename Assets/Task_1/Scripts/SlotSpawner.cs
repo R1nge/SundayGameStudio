@@ -1,3 +1,4 @@
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +10,16 @@ namespace Task_1.Scripts
         [SerializeField] private Slot slotPrefab;
         [SerializeField] private ScrollRect scrollRect;
         [SerializeField] private Transform contentParent;
-        private int _imageIndex;
         private Vector3 _previousPosition;
+        private readonly ReactiveProperty<int> _imageIndex = new();
         private readonly ImageLoader _imageLoader = new();
+
+        public ReactiveProperty<int> Index => _imageIndex;
 
         private void Awake()
         {
+            ServiceLocator.Instance.Register(typeof(SlotSpawner), this);
+
             _previousPosition = contentParent.position;
             scrollRect.onValueChanged.AddListener(SpawnNextImages);
         }
@@ -34,8 +39,8 @@ namespace Task_1.Scripts
         {
             for (int i = 0; i < amount; i++)
             {
-                _imageIndex++;
-                var image = await _imageLoader.GetTexture(_imageIndex);
+                _imageIndex.Value++;
+                var image = await _imageLoader.GetTexture(_imageIndex.Value);
                 if (image != null)
                 {
                     var slot = Instantiate(slotPrefab, contentParent);
@@ -44,6 +49,12 @@ namespace Task_1.Scripts
             }
         }
 
-        private void OnDestroy() => scrollRect.onValueChanged.RemoveAllListeners();
+        private void OnDestroy()
+        {
+            ServiceLocator.Instance.Remove(typeof(SlotSpawner));
+
+            scrollRect.onValueChanged.RemoveAllListeners();
+            _imageIndex.Dispose();
+        }
     }
 }
